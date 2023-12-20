@@ -13,5 +13,13 @@ def get_weather(city):
     print(f"Current temperature in {city} is: {temperature}°C")
 
 if __name__ == "__main__":
-    city = input("Enter the name of the city: ")
-    get_weather(city)
+    while True:
+        try:
+            city = input("Enter the name of the city: (Press 0 to exit) ")
+            if city != "0":
+                get_weather(city)
+            else:
+                break
+        except KeyError:
+            print("Invalid city")
+
